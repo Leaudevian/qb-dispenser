@@ -25,6 +25,7 @@ exports['qtarget']:AddTargetModel(vending_machine_drink, {
 			animation = "drink",
             icon = "fas fa-coffee",
             label = "Water bottle  -  3$",
+            type = "drink",
 			price = 3
         },
         {
@@ -33,6 +34,7 @@ exports['qtarget']:AddTargetModel(vending_machine_drink, {
 			animation = "drink_ecola",
             icon = "fas fa-coffee",
             label = "Kurkakola  -  5$",
+            type = "drink",
 			price = 5
         },
     },
@@ -47,16 +49,23 @@ exports['qtarget']:AddTargetModel(vending_machine_food, {
 			animation = "eat",
             icon = "fas fa-hamburger",
             label = "Twerks  -  3$",
+            type = "food",
 			price = 3
         },
         {
             event = "qb-dispenser:client:Dispenser_food",
 			item = "snikkel_candy",
+            animation = "eat"
             icon = "fas fa-hamburger",
             label = "Snikkel  -  5$",
+            type = "food",
 			price = 5
         },
     },
     distance = 1
 })
 ```
+
+
+
+    TriggerEvent("consumables:client:dispenser:Drink", data)
