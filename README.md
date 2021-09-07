@@ -17,23 +17,10 @@ local vending_machine_food = {
 	-654402915,
 }
 
-
-RegisterNetEvent('Dispenser_food')
-AddEventHandler('dispenser_food', function(data)
-    TriggerEvent("server:remove_cash", data)
-    TriggerEvent("consumables:client:dispenser:Eat", data)
-end)
-
-RegisterNetEvent('dispenser_drink')
-AddEventHandler('dispenser_drink', function(data)
-    TriggerEvent("server:remove_cash", data)
-    TriggerEvent("consumables:client:dispenser:Drink", data)
-end)
-
 exports['qtarget']:AddTargetModel(vending_machine_drink, {
     options = {
         {
-            event = "dispenser_drink",
+            event = "qb-dispenser:client:Dispenser_drink",
 			item = "water_bottle",
 			animation = "drink",
             icon = "fas fa-coffee",
@@ -41,7 +28,7 @@ exports['qtarget']:AddTargetModel(vending_machine_drink, {
 			price = 3
         },
         {
-            event = "dispenser_drink",
+            event = "qb-dispenser:client:Dispenser_drink",
 			item = "kurkakola",
 			animation = "drink_ecola",
             icon = "fas fa-coffee",
@@ -49,13 +36,13 @@ exports['qtarget']:AddTargetModel(vending_machine_drink, {
 			price = 5
         },
     },
-    distance = 2
+    distance = 1
 })
 
 exports['qtarget']:AddTargetModel(vending_machine_food, {
     options = {
         {
-            event = "dispenser_food",
+            event = "qb-dispenser:client:Dispenser_food",
 			item = "twerks_candy",
 			animation = "eat",
             icon = "fas fa-hamburger",
@@ -63,13 +50,13 @@ exports['qtarget']:AddTargetModel(vending_machine_food, {
 			price = 3
         },
         {
-            event = "dispenser_food",
+            event = "qb-dispenser:client:Dispenser_food",
 			item = "snikkel_candy",
             icon = "fas fa-hamburger",
             label = "Snikkel  -  5$",
 			price = 5
         },
     },
-    distance = 2
+    distance = 1
 })
 ```
